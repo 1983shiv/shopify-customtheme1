@@ -1905,6 +1905,16 @@ input[type='checkbox'] {
     padding-bottom: 2rem;
   }
 
+  .header-wrapper:before{
+    position: absolute;  
+    content:"";
+    height: 2px;
+    width: 100%;
+    top:50%;
+    left: 0;
+    background-color: rgb(var(--color-foreground));
+    z-index: 1;
+  }
   .header--has-menu:not(.header--middle-left) {
     padding-bottom: 0;
   }
@@ -1919,7 +1929,7 @@ input[type='checkbox'] {
 
   .header--middle-left {
     grid-template-areas: 'navigation heading icons';
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr 1fr auto;
     column-gap: 2rem;
   }
 
@@ -2045,6 +2055,9 @@ input[type='checkbox'] {
 .header__icon--cart {
   position: relative;
   margin-right: -1.2rem;
+  background-color: #fff;
+  z-index: 10;
+  margin-left: 2rem;
 }
 
 @media screen and (max-width: 989px) {
@@ -2070,6 +2083,8 @@ menu-drawer + .header__search {
 .header__search {
   display: inline-flex;
   line-height: 0;
+  background-color: #fff;
+  z-index: 10;
 }
 
 .header--top-center > .header__search {
@@ -2237,6 +2252,7 @@ details[open] > .header__icon--menu .icon-hamburger {
   padding: 1.2rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
+  
 }
 
 .header__menu-item:hover {
@@ -2247,20 +2263,35 @@ details[open] > .header__icon--menu .icon-hamburger {
   transition: text-decoration var(--duration-short) ease;
 }
 
-.header__menu-item:hover span {
+.header__menu-item:before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: rgb(var(--color-foreground));
+  transition: 0.3s;
+}
+
+.header__menu-item:hover:before{
+  width: 100%;
+}
+
+/* .header__menu-item:hover span {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
-}
+} */
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
   color: rgb(var(--color-foreground));
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-underline-offset: 0.3rem;
 }
 
 .header__menu-item:hover .header__active-menu-item {
-  text-decoration-thickness: 0.2rem;
+  /* text-decoration-thickness: 0.2rem; */
 }
 
 .header__submenu {
