@@ -18,7 +18,7 @@
                         </span>
                     </div>
                     <div class="image-wrapper">
-                        <img src=" {{ product.images[0].src | img_url }} " alt="{{ product.title }}">
+                        <img src=" {{ product.images[0].src | img_url: 'Medium' }} " alt="{{ product.title }}">
                     </div>
                     <p class="weekly-picks_header-title">{{ product.title }}</p>
                     <div class="weekly-picks_price">
