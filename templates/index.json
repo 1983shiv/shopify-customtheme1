@@ -227,6 +227,12 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
+    },
+    "164009472117ef0c1f": {
+      "type": "weekly-picks",
+      "settings": {
+        "collection": "weekly-picks"
+      }
     }
   },
   "order": [
@@ -236,6 +242,7 @@
     "featured_products",
     "collage",
     "video",
-    "multi_column"
+    "multi_column",
+    "164009472117ef0c1f"
   ]
 }
