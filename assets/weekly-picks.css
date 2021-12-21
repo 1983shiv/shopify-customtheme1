@@ -11,10 +11,12 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    
 }
 
 .weekly-picks_item-link{
     text-decoration: none;
+    position: relative;
 }
 .image-wrapper{
     display: grid;
@@ -22,9 +24,14 @@
     height: 300px;
 }
 
+.image-wrapper img{
+    width: 75%;
+}
+
 .weekly-picks_price{
     font-size: 19px;
     text-align: center;
+    color: rgb(var(--color-foreground));
 }
 
 .weekly-picks_item{
@@ -32,6 +39,7 @@
     height: 400px;
     margin: 10px auto;
     position: relative;
+    box-shadow: 1px 1px 5px 0 #cecece;
     
 }
 
@@ -39,4 +47,23 @@
     text-align: center;
     color: rgb(var(--color-foreground));
     font-size: 16px;
+}
+
+@media screen and (min-width: 768px){
+    .weekly-picks_product-ctn{
+        flex-direction: row;
+        width: 768px;
+        margin: 0 auto;
+    }
+    .weekly-picks_item{
+        margin: 10px;
+    }
+    .image-wrapper img{
+        width: 80%;
+    }
+}
+@media screen and (min-width: 1024px){
+    .weekly-picks_product-ctn{
+        width: 800px;
+    }
 }
