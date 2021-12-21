@@ -10,9 +10,9 @@
 <div class="hero-collections">
     <div class="hero-collections_card-container">
     {% for block in section.blocks %}
-        <a class="hero-collections_card" href="">
-            <div class="hero-collections_card-bg" style = "background-image: url( ' {{ block.settings.image_bg | img_url}} ' ); "></div>
-            <div class="hero-collections_card-hover" style = "background-image: url( ' {{ block.settings.image_hover  | img_url}} ' ); "></div>
+        <a class="hero-collections_card" href=" {{ block.settings.collection.url }} ">
+            <div class="hero-collections_card-bg" style = "background-image: url( ' {{ block.settings.image_bg | img_url }} ' ); "></div>
+            <div class="hero-collections_card-hover" style = "background-image: url( ' {{ block.settings.image_hover  | img_url }} ' ); "></div>
             <h3 class="hero-collections_card-title">{{ block.settings.collection.title | downcase }} </h3>
         </a>
     {% endfor %}
