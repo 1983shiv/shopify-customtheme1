@@ -11,8 +11,13 @@
     <div class="hero-collections_card-container">
     {% for block in section.blocks %}
         <a class="hero-collections_card" href="">
+<<<<<<< HEAD
             <div class="hero-collections_card-bg" style = "background-image: url( ' {{ block.settings.image_bg | img_url}} ' ); "></div>
             <div class="hero-collections_card-hover" style = "background-image: url( ' {{ block.settings.image_bg  | img_url}} ' ); "></div>
+=======
+            <div class="hero-collections_card-bg" style = "background-image: url( ' {{ block.settings.image_bg }} ' ); "></div>
+            <div class="hero-collections_card-hover" style = "background-image: url( ' {{ block.settings.image_bg }} ' ); "></div>
+>>>>>>> c48b13bb4c845bc2c27261724fc88c8dbba2ce04
             <h3 class="hero-collections_card-title">{{ block.settings.collection.title | downcase }} </h3>
         </a>
     {% endfor %}
