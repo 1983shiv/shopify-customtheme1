@@ -1,0 +1,79 @@
+<!-- {{ 'section-collection-grid.css'  | asset_url | stylesheet_tag }} -->
+
+<div class="collection-grid-ctn">
+    <h2 class="collection-grid_title">{{ section.settings.header}}</h2>
+    <div collection-grid_grid-ctn>
+        {% for block in section.blocks %}
+            <a class="collection-grid_grid-item" href="{{ block.settings.collection.url}}">
+                <div class="collection-grid_img-cnt">
+                    <img src="{{ block.settings.collection.image | img_url: 'Large' }}" alt="{{block.settings.collection.title}}">
+                    <h3 class="collection-grid_grid-title">{{block.settings.collection.title}}</h3>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% stylesheet %}
+
+.collection-grid_grid-item{
+    border: 2px solid #000;
+    height: 470px;
+    background-color: #FBF9F9;
+    text-decoration: none;
+}
+    /* .collection-grid-ctn{} */
+.collection-grid_title{
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+/* .collection-grid_grid-title{} */
+.collection-grid_grid-ctn{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px 0;
+    margin: 0 2.5%;
+}
+
+
+/* .collection-grid_img-ctn{} */
+/* .collection-grid_grid-title{} */
+
+
+
+{% endstylesheet %}
+
+{% schema %}
+{
+    "name": "Collection Grid",
+    "settings": [
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "collection",
+            "limit": 4,
+            "name": "Collection",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name":"Collection Grid"
+        }
+    ]
+}
+{% endschema %}

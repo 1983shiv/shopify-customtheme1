@@ -1,0 +1,25 @@
+/* .collection-grid-ctn{} */
+.collection-grid_title{
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+/* .collection-grid_grid-title{} */
+.collection-grid_grid-ctn{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px 0;
+    margin: 0 2.5%;
+}
+
+.collection-grid_grid-item{
+    border: 2px solid #000;
+    height: 470px;
+    background-color: #FBF9F9;
+    text-decoration: none;
+}
+/* .collection-grid_img-ctn{} */
+/* .collection-grid_grid-title{} */
+
+
